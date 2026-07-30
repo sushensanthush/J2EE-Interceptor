@@ -6,8 +6,9 @@ import jakarta.interceptor.InvocationContext;
 public class TestInterceptor {
 
     @AroundInvoke
-    public Object m(InvocationContext ic){
+    public Object m(InvocationContext ic) throws Exception {
         System.out.println("TestInterceptor m()...");
+        ic.proceed();
         return null;
     }
 
