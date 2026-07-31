@@ -3,10 +3,11 @@ package lk.susa.ee.ejb;
 
 import jakarta.ejb.Stateless;
 import jakarta.interceptor.Interceptors;
+import lk.susa.ee.interceptor.AInterceptor;
 import lk.susa.ee.interceptor.TestInterceptor;
 
 @Stateless
-@Interceptors(TestInterceptor.class)
+@Interceptors({TestInterceptor.class, AInterceptor.class})
 public class UserSessionBean {
     public void doAction(String name, int age) {
         System.out.println("UserSessionBean doAction start");
