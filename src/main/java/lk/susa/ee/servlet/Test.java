@@ -10,7 +10,6 @@ import lk.susa.ee.ejb.UserSessionBean;
 
 import java.io.IOException;
 
-
 @WebServlet("/test")
 public class Test extends HttpServlet {
 
@@ -20,7 +19,11 @@ public class Test extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("Test Servlet start");
-        userSessionBean.doAction("Amal",20);
-        System.out.println("Test Servlet end");
+        String action = userSessionBean.doAction("Amal", 20);
+        System.out.println("Test Servlet end "+ action);
+
+
+
+
     }
 }
